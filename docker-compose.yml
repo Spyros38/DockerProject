@@ -1,0 +1,18 @@
+#version: '3.8' # Specify Docker Compose file format
+
+services:
+  docker_demo_2:
+    image: spyrogi/docker_demo_2
+    container_name: docker_demo_2_container # Corrected name
+    ports:
+      - "5001:5001" # Proper indentation
+    restart: "no" # Ensures the container doesn't restart unnecessarily
+
+  nodered:
+    image: nodered/node-red
+    container_name: node-red-container
+    ports:
+      - "1880:1880" # Maps Node-RED to localhost:1880
+    restart: always # Ensures Node-RED restarts if the container stops
+
+
